@@ -56,6 +56,18 @@ public class PositionListTest
         expectedResult.Should().BeEquivalentTo(found);
     }
 
+    [Fact]
+    public void Add_Duplicate_Id_Should_Throw()
+    {
+        var list = new PositionList("a");
+        var p1 = new Player("1", "Bob");
+        var p2 = new Player("1", "Alice");
+
+        list.Add(p1, null);
+
+        Assert.Throws<Exception>(() => list.Add(p2, null));
+    }
+
     /*
      * 
      * And so on, I will not test for everything

@@ -2,7 +2,7 @@
 
 namespace DepthCharts.DomainModels;
 
-public class PositionList
+public class PositionList : IPositionList
 {
     public string Position { get; init; }
 
@@ -87,7 +87,7 @@ public class PositionList
         }
     }
 
-    public IEnumerable<Player> GetChartPlayers()
+    public IEnumerable<Player> GetAllPlayers()
     {
         var node = Head;
         while (node != null)
